@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE8F7F202968CC28002194D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F1F2968CC28002194D0 /* main.swift */; };
+		AE8F7F282968CCBF002194D0 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F272968CCBF002194D0 /* ArgumentParser */; };
+		AE8F7F2B2968D210002194D0 /* Lifecycle in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F2A2968D210002194D0 /* Lifecycle */; };
+		AE8F7F2D2968D210002194D0 /* LifecycleNIOCompat in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F2C2968D210002194D0 /* LifecycleNIOCompat */; };
+		AE8F7F2F2968F111002194D0 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F2E2968F111002194D0 /* ServerConfig.swift */; };
+		AE8F7F312968F121002194D0 /* ClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F302968F121002194D0 /* ClientConfig.swift */; };
+		AE8F7F342968FDC9002194D0 /* Gardener in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F332968FDC9002194D0 /* Gardener */; };
+		AE8F7F372968FE04002194D0 /* KeychainCli in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F362968FE04002194D0 /* KeychainCli */; };
+		AE8F7F3A29690346002194D0 /* Nametag in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F3929690346002194D0 /* Nametag */; };
+		AE8F7F3C2969050D002194D0 /* Antiphony.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F3B2969050D002194D0 /* Antiphony.swift */; };
+		AE8F7F3F296907E4002194D0 /* Simulation in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F3E296907E4002194D0 /* Simulation */; };
+		AE8F7F41296907E4002194D0 /* Spacetime in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F40296907E4002194D0 /* Spacetime */; };
+		AE8F7F43296907E4002194D0 /* Universe in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F42296907E4002194D0 /* Universe */; };
+		AE8F7F4529691120002194D0 /* AntiphonyUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F4429691120002194D0 /* AntiphonyUniverse.swift */; };
+		AE8F7F4829691514002194D0 /* Puppy in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F4729691514002194D0 /* Puppy */; };
+		AE8F7F4B29691979002194D0 /* Flower in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F4A29691979002194D0 /* Flower */; };
+		AE8F7F4E296919AE002194D0 /* TransmissionTypes in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F4D296919AE002194D0 /* TransmissionTypes */; };
+		AE8F7F5029691B17002194D0 /* AddressPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F4F29691B17002194D0 /* AddressPool.swift */; };
+		AE8F7F5229691BEA002194D0 /* ConduitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */; };
+		AE8F7F54296CE0EC002194D0 /* Conduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F53296CE0EC002194D0 /* Conduit.swift */; };
+		AE8F7F57296CE19F002194D0 /* InternetProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F56296CE19F002194D0 /* InternetProtocols */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE8F7F1A2968CC28002194D0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE8F7F1C2968CC28002194D0 /* Antiphony */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Antiphony; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8F7F1F2968CC28002194D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AE8F7F2E2968F111002194D0 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		AE8F7F302968F121002194D0 /* ClientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientConfig.swift; sourceTree = "<group>"; };
+		AE8F7F3B2969050D002194D0 /* Antiphony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antiphony.swift; sourceTree = "<group>"; };
+		AE8F7F4429691120002194D0 /* AntiphonyUniverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiphonyUniverse.swift; sourceTree = "<group>"; };
+		AE8F7F4F29691B17002194D0 /* AddressPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPool.swift; sourceTree = "<group>"; };
+		AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConduitCollection.swift; sourceTree = "<group>"; };
+		AE8F7F53296CE0EC002194D0 /* Conduit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conduit.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE8F7F192968CC28002194D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE8F7F43296907E4002194D0 /* Universe in Frameworks */,
+				AE8F7F3A29690346002194D0 /* Nametag in Frameworks */,
+				AE8F7F372968FE04002194D0 /* KeychainCli in Frameworks */,
+				AE8F7F342968FDC9002194D0 /* Gardener in Frameworks */,
+				AE8F7F4E296919AE002194D0 /* TransmissionTypes in Frameworks */,
+				AE8F7F282968CCBF002194D0 /* ArgumentParser in Frameworks */,
+				AE8F7F41296907E4002194D0 /* Spacetime in Frameworks */,
+				AE8F7F2D2968D210002194D0 /* LifecycleNIOCompat in Frameworks */,
+				AE8F7F4829691514002194D0 /* Puppy in Frameworks */,
+				AE8F7F3F296907E4002194D0 /* Simulation in Frameworks */,
+				AE8F7F2B2968D210002194D0 /* Lifecycle in Frameworks */,
+				AE8F7F4B29691979002194D0 /* Flower in Frameworks */,
+				AE8F7F57296CE19F002194D0 /* InternetProtocols in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE8F7F132968CC28002194D0 = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F1E2968CC28002194D0 /* Antiphony */,
+				AE8F7F1D2968CC28002194D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE8F7F1D2968CC28002194D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F1C2968CC28002194D0 /* Antiphony */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE8F7F1E2968CC28002194D0 /* Antiphony */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F1F2968CC28002194D0 /* main.swift */,
+				AE8F7F3B2969050D002194D0 /* Antiphony.swift */,
+				AE8F7F4429691120002194D0 /* AntiphonyUniverse.swift */,
+				AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */,
+				AE8F7F2E2968F111002194D0 /* ServerConfig.swift */,
+				AE8F7F302968F121002194D0 /* ClientConfig.swift */,
+				AE8F7F4F29691B17002194D0 /* AddressPool.swift */,
+				AE8F7F53296CE0EC002194D0 /* Conduit.swift */,
+			);
+			path = Antiphony;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE8F7F1B2968CC28002194D0 /* Antiphony */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "Antiphony" */;
+			buildPhases = (
+				AE8F7F182968CC28002194D0 /* Sources */,
+				AE8F7F192968CC28002194D0 /* Frameworks */,
+				AE8F7F1A2968CC28002194D0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Antiphony;
+			packageProductDependencies = (
+				AE8F7F272968CCBF002194D0 /* ArgumentParser */,
+				AE8F7F2A2968D210002194D0 /* Lifecycle */,
+				AE8F7F2C2968D210002194D0 /* LifecycleNIOCompat */,
+				AE8F7F332968FDC9002194D0 /* Gardener */,
+				AE8F7F362968FE04002194D0 /* KeychainCli */,
+				AE8F7F3929690346002194D0 /* Nametag */,
+				AE8F7F3E296907E4002194D0 /* Simulation */,
+				AE8F7F40296907E4002194D0 /* Spacetime */,
+				AE8F7F42296907E4002194D0 /* Universe */,
+				AE8F7F4729691514002194D0 /* Puppy */,
+				AE8F7F4A29691979002194D0 /* Flower */,
+				AE8F7F4D296919AE002194D0 /* TransmissionTypes */,
+				AE8F7F56296CE19F002194D0 /* InternetProtocols */,
+			);
+			productName = Antiphony;
+			productReference = AE8F7F1C2968CC28002194D0 /* Antiphony */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE8F7F142968CC28002194D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					AE8F7F1B2968CC28002194D0 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = AE8F7F172968CC28002194D0 /* Build configuration list for PBXProject "Antiphony" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE8F7F132968CC28002194D0;
+			packageReferences = (
+				AE8F7F262968CCBF002194D0 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				AE8F7F292968D210002194D0 /* XCRemoteSwiftPackageReference "swift-service-lifecycle" */,
+				AE8F7F322968FDC9002194D0 /* XCRemoteSwiftPackageReference "Gardener" */,
+				AE8F7F352968FE04002194D0 /* XCRemoteSwiftPackageReference "KeychainCli" */,
+				AE8F7F3829690346002194D0 /* XCRemoteSwiftPackageReference "Nametag" */,
+				AE8F7F3D296907E4002194D0 /* XCRemoteSwiftPackageReference "Spacetime" */,
+				AE8F7F4629691514002194D0 /* XCRemoteSwiftPackageReference "Puppy" */,
+				AE8F7F4929691979002194D0 /* XCRemoteSwiftPackageReference "Flower" */,
+				AE8F7F4C296919AE002194D0 /* XCRemoteSwiftPackageReference "TransmissionTypes" */,
+				AE8F7F55296CE19F002194D0 /* XCRemoteSwiftPackageReference "InternetProtocols" */,
+			);
+			productRefGroup = AE8F7F1D2968CC28002194D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE8F7F1B2968CC28002194D0 /* Antiphony */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE8F7F182968CC28002194D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE8F7F3C2969050D002194D0 /* Antiphony.swift in Sources */,
+				AE8F7F2F2968F111002194D0 /* ServerConfig.swift in Sources */,
+				AE8F7F5029691B17002194D0 /* AddressPool.swift in Sources */,
+				AE8F7F202968CC28002194D0 /* main.swift in Sources */,
+				AE8F7F4529691120002194D0 /* AntiphonyUniverse.swift in Sources */,
+				AE8F7F312968F121002194D0 /* ClientConfig.swift in Sources */,
+				AE8F7F54296CE0EC002194D0 /* Conduit.swift in Sources */,
+				AE8F7F5229691BEA002194D0 /* ConduitCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE8F7F212968CC28002194D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE8F7F222968CC28002194D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AE8F7F242968CC28002194D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AE8F7F252968CC28002194D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE8F7F172968CC28002194D0 /* Build configuration list for PBXProject "Antiphony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE8F7F212968CC28002194D0 /* Debug */,
+				AE8F7F222968CC28002194D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "Antiphony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE8F7F242968CC28002194D0 /* Debug */,
+				AE8F7F252968CC28002194D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE8F7F262968CCBF002194D0 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		AE8F7F292968D210002194D0 /* XCRemoteSwiftPackageReference "swift-service-lifecycle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-server/swift-service-lifecycle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "1.0.0-alpha.11";
+			};
+		};
+		AE8F7F322968FDC9002194D0 /* XCRemoteSwiftPackageReference "Gardener" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/Gardener";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F352968FE04002194D0 /* XCRemoteSwiftPackageReference "KeychainCli" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/KeychainCli";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F3829690346002194D0 /* XCRemoteSwiftPackageReference "Nametag" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/Nametag";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F3D296907E4002194D0 /* XCRemoteSwiftPackageReference "Spacetime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/Spacetime";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F4629691514002194D0 /* XCRemoteSwiftPackageReference "Puppy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sushichop/Puppy.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+		AE8F7F4929691979002194D0 /* XCRemoteSwiftPackageReference "Flower" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/Flower";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F4C296919AE002194D0 /* XCRemoteSwiftPackageReference "TransmissionTypes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/TransmissionTypes";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE8F7F55296CE19F002194D0 /* XCRemoteSwiftPackageReference "InternetProtocols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OperatorFoundation/InternetProtocols";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE8F7F272968CCBF002194D0 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F262968CCBF002194D0 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		AE8F7F2A2968D210002194D0 /* Lifecycle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F292968D210002194D0 /* XCRemoteSwiftPackageReference "swift-service-lifecycle" */;
+			productName = Lifecycle;
+		};
+		AE8F7F2C2968D210002194D0 /* LifecycleNIOCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F292968D210002194D0 /* XCRemoteSwiftPackageReference "swift-service-lifecycle" */;
+			productName = LifecycleNIOCompat;
+		};
+		AE8F7F332968FDC9002194D0 /* Gardener */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F322968FDC9002194D0 /* XCRemoteSwiftPackageReference "Gardener" */;
+			productName = Gardener;
+		};
+		AE8F7F362968FE04002194D0 /* KeychainCli */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F352968FE04002194D0 /* XCRemoteSwiftPackageReference "KeychainCli" */;
+			productName = KeychainCli;
+		};
+		AE8F7F3929690346002194D0 /* Nametag */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F3829690346002194D0 /* XCRemoteSwiftPackageReference "Nametag" */;
+			productName = Nametag;
+		};
+		AE8F7F3E296907E4002194D0 /* Simulation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F3D296907E4002194D0 /* XCRemoteSwiftPackageReference "Spacetime" */;
+			productName = Simulation;
+		};
+		AE8F7F40296907E4002194D0 /* Spacetime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F3D296907E4002194D0 /* XCRemoteSwiftPackageReference "Spacetime" */;
+			productName = Spacetime;
+		};
+		AE8F7F42296907E4002194D0 /* Universe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F3D296907E4002194D0 /* XCRemoteSwiftPackageReference "Spacetime" */;
+			productName = Universe;
+		};
+		AE8F7F4729691514002194D0 /* Puppy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F4629691514002194D0 /* XCRemoteSwiftPackageReference "Puppy" */;
+			productName = Puppy;
+		};
+		AE8F7F4A29691979002194D0 /* Flower */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F4929691979002194D0 /* XCRemoteSwiftPackageReference "Flower" */;
+			productName = Flower;
+		};
+		AE8F7F4D296919AE002194D0 /* TransmissionTypes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F4C296919AE002194D0 /* XCRemoteSwiftPackageReference "TransmissionTypes" */;
+			productName = TransmissionTypes;
+		};
+		AE8F7F56296CE19F002194D0 /* InternetProtocols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE8F7F55296CE19F002194D0 /* XCRemoteSwiftPackageReference "InternetProtocols" */;
+			productName = InternetProtocols;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AE8F7F142968CC28002194D0 /* Project object */;
+}

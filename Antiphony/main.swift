@@ -30,7 +30,6 @@ struct AntiphonyCommandLine: ParsableCommand
     
     static let clientConfigURL = URL(fileURLWithPath: File.currentDirectory()).appendingPathComponent("persona-client.json")
     static let serverConfigURL = URL(fileURLWithPath: File.homeDirectory().path).appendingPathComponent("persona-server.json")
-    
     static let loggerLabel = "org.OperatorFoundation.AntiphonyLogger"
 }
 

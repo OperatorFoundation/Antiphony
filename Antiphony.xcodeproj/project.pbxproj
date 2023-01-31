@@ -28,6 +28,8 @@
 		AE8F7F5229691BEA002194D0 /* ConduitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */; };
 		AE8F7F54296CE0EC002194D0 /* Conduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F53296CE0EC002194D0 /* Conduit.swift */; };
 		AE8F7F57296CE19F002194D0 /* InternetProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = AE8F7F56296CE19F002194D0 /* InternetProtocols */; };
+		AE8F7F75296DDF28002194D0 /* AntiphonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F73296DDF28002194D0 /* AntiphonyTests.swift */; };
+		AE8F7F78296DDF30002194D0 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F7F76296DDF30002194D0 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,7 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE8F7F1C2968CC28002194D0 /* Antiphony */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Antiphony; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8F7F1C2968CC28002194D0 /* AntiphonyCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AntiphonyCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8F7F1F2968CC28002194D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE8F7F2E2968F111002194D0 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		AE8F7F302968F121002194D0 /* ClientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientConfig.swift; sourceTree = "<group>"; };
@@ -52,6 +54,9 @@
 		AE8F7F4F29691B17002194D0 /* AddressPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPool.swift; sourceTree = "<group>"; };
 		AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConduitCollection.swift; sourceTree = "<group>"; };
 		AE8F7F53296CE0EC002194D0 /* Conduit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conduit.swift; sourceTree = "<group>"; };
+		AE8F7F73296DDF28002194D0 /* AntiphonyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntiphonyTests.swift; sourceTree = "<group>"; };
+		AE8F7F76296DDF30002194D0 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		AE8F7F77296DDF30002194D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +94,7 @@
 		AE8F7F1D2968CC28002194D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE8F7F1C2968CC28002194D0 /* Antiphony */,
+				AE8F7F1C2968CC28002194D0 /* AntiphonyCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +103,25 @@
 			isa = PBXGroup;
 			children = (
 				AE8F7F1F2968CC28002194D0 /* main.swift */,
+				AE8F7F76296DDF30002194D0 /* Package.swift */,
+				AE8F7F77296DDF30002194D0 /* README.md */,
+				AE8F7F6E296DDF28002194D0 /* Sources */,
+				AE8F7F71296DDF28002194D0 /* Tests */,
+			);
+			path = Antiphony;
+			sourceTree = "<group>";
+		};
+		AE8F7F6E296DDF28002194D0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F6F296DDF28002194D0 /* Antiphony */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AE8F7F6F296DDF28002194D0 /* Antiphony */ = {
+			isa = PBXGroup;
+			children = (
 				AE8F7F3B2969050D002194D0 /* Antiphony.swift */,
 				AE8F7F4429691120002194D0 /* AntiphonyUniverse.swift */,
 				AE8F7F5129691BEA002194D0 /* ConduitCollection.swift */,
@@ -109,12 +133,28 @@
 			path = Antiphony;
 			sourceTree = "<group>";
 		};
+		AE8F7F71296DDF28002194D0 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F72296DDF28002194D0 /* AntiphonyTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AE8F7F72296DDF28002194D0 /* AntiphonyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F7F73296DDF28002194D0 /* AntiphonyTests.swift */,
+			);
+			path = AntiphonyTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE8F7F1B2968CC28002194D0 /* Antiphony */ = {
+		AE8F7F1B2968CC28002194D0 /* AntiphonyCLI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "Antiphony" */;
+			buildConfigurationList = AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "AntiphonyCLI" */;
 			buildPhases = (
 				AE8F7F182968CC28002194D0 /* Sources */,
 				AE8F7F192968CC28002194D0 /* Frameworks */,
@@ -124,7 +164,7 @@
 			);
 			dependencies = (
 			);
-			name = Antiphony;
+			name = AntiphonyCLI;
 			packageProductDependencies = (
 				AE8F7F272968CCBF002194D0 /* ArgumentParser */,
 				AE8F7F2A2968D210002194D0 /* Lifecycle */,
@@ -141,7 +181,7 @@
 				AE8F7F56296CE19F002194D0 /* InternetProtocols */,
 			);
 			productName = Antiphony;
-			productReference = AE8F7F1C2968CC28002194D0 /* Antiphony */;
+			productReference = AE8F7F1C2968CC28002194D0 /* AntiphonyCLI */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +224,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE8F7F1B2968CC28002194D0 /* Antiphony */,
+				AE8F7F1B2968CC28002194D0 /* AntiphonyCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -196,11 +236,13 @@
 			files = (
 				AE8F7F3C2969050D002194D0 /* Antiphony.swift in Sources */,
 				AE8F7F2F2968F111002194D0 /* ServerConfig.swift in Sources */,
+				AE8F7F75296DDF28002194D0 /* AntiphonyTests.swift in Sources */,
 				AE8F7F5029691B17002194D0 /* AddressPool.swift in Sources */,
 				AE8F7F202968CC28002194D0 /* main.swift in Sources */,
 				AE8F7F4529691120002194D0 /* AntiphonyUniverse.swift in Sources */,
 				AE8F7F312968F121002194D0 /* ClientConfig.swift in Sources */,
 				AE8F7F54296CE0EC002194D0 /* Conduit.swift in Sources */,
+				AE8F7F78296DDF30002194D0 /* Package.swift in Sources */,
 				AE8F7F5229691BEA002194D0 /* ConduitCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "Antiphony" */ = {
+		AE8F7F232968CC28002194D0 /* Build configuration list for PBXNativeTarget "AntiphonyCLI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE8F7F242968CC28002194D0 /* Debug */,

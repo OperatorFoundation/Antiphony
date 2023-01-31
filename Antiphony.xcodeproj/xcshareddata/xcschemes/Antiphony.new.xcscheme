@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-               BuildableName = "Antiphony"
-               BlueprintName = "Antiphony"
+               BuildableName = "AntiphonyCLI"
+               BlueprintName = "AntiphonyCLI"
                ReferencedContainer = "container:Antiphony.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-            BuildableName = "Antiphony"
-            BlueprintName = "Antiphony"
+            BuildableName = "AntiphonyCLI"
+            BlueprintName = "AntiphonyCLI"
             ReferencedContainer = "container:Antiphony.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-            BuildableName = "Antiphony"
-            BlueprintName = "Antiphony"
+            BuildableName = "AntiphonyCLI"
+            BlueprintName = "AntiphonyCLI"
             ReferencedContainer = "container:Antiphony.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

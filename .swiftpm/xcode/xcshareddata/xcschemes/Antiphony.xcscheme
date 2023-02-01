@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-               BuildableName = "AntiphonyCLI"
-               BlueprintName = "AntiphonyCLI"
-               ReferencedContainer = "container:Antiphony.xcodeproj">
+               BlueprintIdentifier = "Antiphony"
+               BuildableName = "Antiphony"
+               BlueprintName = "Antiphony"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -39,32 +39,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-            BuildableName = "AntiphonyCLI"
-            BlueprintName = "AntiphonyCLI"
-            ReferencedContainer = "container:Antiphony.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "new"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "xcodeAntiphonyTest"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "1771"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      allowLocationSimulation = "YES">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -72,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE8F7F1B2968CC28002194D0"
-            BuildableName = "AntiphonyCLI"
-            BlueprintName = "AntiphonyCLI"
-            ReferencedContainer = "container:Antiphony.xcodeproj">
+            BlueprintIdentifier = "Antiphony"
+            BuildableName = "Antiphony"
+            BlueprintName = "Antiphony"
+            ReferencedContainer = "container:">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

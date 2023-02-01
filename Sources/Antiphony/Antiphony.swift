@@ -16,17 +16,15 @@ import FoundationNetworking
 import Logging
 #endif
 
-import Flower
 import KeychainCli
 import Net
 import Simulation
 import Spacetime
 import Transmission
-import InternetProtocols
 
-public class Antiphony
+open class Antiphony
 {
-    public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String) throws
+    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String) throws
     {
         let ip: String = try Ipify.getPublicIP()
         
@@ -57,14 +55,18 @@ public class Antiphony
         print("Wrote config to \(clientConfigURL.path)")
     }
     
-    public func startListening(serverConfigURL: URL, loggerLabel: String) throws
+    private let lock = DispatchSemaphore(value: 0)
+    var lifecycle: ServiceLifecycle
+    public var listener: Transmission.Listener? = nil
+    
+    public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities) throws
     {
         guard let config = ServerConfig(url: serverConfigURL) else
         {
             throw AntiphonyError.invalidConfigFile
         }
         
-        let lifecycle = ServiceLifecycle()
+        self.lifecycle = ServiceLifecycle()
 
         let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         lifecycle.registerShutdown(label: "eventLoopGroup", .sync(eventLoopGroup.syncShutdownGracefully))
@@ -75,10 +77,10 @@ public class Antiphony
         let logger = Logger(label: loggerLabel)
         #endif
         
-        let simulation = Simulation(capabilities: Capabilities(.display, .networkConnect, .networkListen))
-        let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: logger, messageHandler: self.handleParsedMessage(address:message:packet:conduit:))
+        let simulation = Simulation(capabilities: capabilities)
+        let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: logger)
 
-        lifecycle.register(label: "antiphony", start: .sync(universe.run), shutdown: .sync(universe.shutdown))
+        lifecycle.register(label: "antiphony", start: .sync(universe.run), shutdown: .sync(self.shutdown))
 
         lifecycle.start
         {
@@ -92,29 +94,43 @@ public class Antiphony
             {
                 print("The Antiphony server has started successfully 🚀")
             }
+            
+            self.lock.signal()
         }
-
-        lifecycle.wait()
+        
+        lock.wait()
+        
+        if let universeListener = universe.listener
+        {
+            self.listener = universeListener
+        }
+        else
+        {
+            throw AntiphonyError.failedToCreateListener
+        }
     }
     
-
-    func handleParsedMessage(address: IPv4Address, message: Message, packet: Packet, conduit: Conduit) throws
+    open func shutdown()
     {
-        print("\n* Antiphony.handleParsedMessage()")
+        print("Antiphony is shutting down.")
+    }
+    
+    public func wait()
+    {
+        lifecycle.wait()
     }
 }
 
 public enum AntiphonyError: Error
 {
     case portInUse(Int)
-    case couldNotLoadKeychain
-    case couldNotGeneratePrivateKey
     case addressPoolAllocationFailed
     case addressStringIsNotIPv4(String)
     case addressDataIsNotIPv4(Data)
-    case unsupportedFirstMessage(Message)
-    case unsupportedNextMessage(Message)
-    case unsupportedParsedMessage(Message)
+    case couldNotLoadKeychain
+    case couldNotGeneratePrivateKey
+    case failedToCreateListener
+    case failedToCreateConnection
     case connectionClosed
     case packetNotIPv4(Data)
     case unsupportedPacketType(Data)

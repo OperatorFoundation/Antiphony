@@ -1,3 +1,7 @@
-
+xcuserdata/
+.build/
+.DS_Store
 Antiphony.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
 Antiphony.xcodeproj/xcuserdata/*
+Package.resolved
+spacetime/data/nextIndex

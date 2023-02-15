@@ -92,7 +92,7 @@ open class Antiphony
             }
             else
             {
-                print("The Antiphony server has started successfully 🚀")
+                print("Server started 🚀")
             }
             
             self.lock.signal()
@@ -103,6 +103,7 @@ open class Antiphony
         if let universeListener = universe.listener
         {
             self.listener = universeListener
+            print("Server listening 🪐")
         }
         else
         {

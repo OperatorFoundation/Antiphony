@@ -9,9 +9,9 @@ import Foundation
 
 public struct ServerConfig: Codable
 {
-    let name: String
-    let host: String
-    let port: Int
+    public let name: String
+    public let host: String
+    public let port: Int
 
     public init(name: String, host: String, port: Int)
     {
@@ -20,7 +20,7 @@ public struct ServerConfig: Codable
         self.port = port
     }
     
-    init?(from data: Data)
+    public init?(from data: Data)
     {
         let decoder = JSONDecoder()
         do

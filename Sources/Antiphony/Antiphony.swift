@@ -98,7 +98,7 @@ open class Antiphony
     var lifecycle: ServiceLifecycle
     public var listener: Transmission.Listener? = nil
     
-    public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities) throws
+    public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities, label: String = "antiphony") throws
     {
         guard let config = ServerConfig(url: serverConfigURL) else
         {
@@ -119,7 +119,7 @@ open class Antiphony
         let simulation = Simulation(capabilities: capabilities)
         let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: logger)
 
-        lifecycle.register(label: "antiphony", start: .sync(universe.run), shutdown: .sync(self.shutdown))
+        lifecycle.register(label: label, start: .sync(universe.run), shutdown: .sync(self.shutdown))
 
         lifecycle.start
         {

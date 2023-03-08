@@ -60,7 +60,8 @@ open class Antiphony
         try clientConfig.save(to: clientConfigURL)
         print("Wrote config to \(clientConfigURL.path)")
     }
-
+    
+    #if os(macOS)
     static func getIPAddress() -> String
     {
         var address: String?
@@ -93,6 +94,7 @@ open class Antiphony
 
         return address ?? ""
     }
+    #endif
     
     private let lock = DispatchSemaphore(value: 0)
     var lifecycle: ServiceLifecycle

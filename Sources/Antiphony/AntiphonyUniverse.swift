@@ -16,7 +16,6 @@ import Logging
 import Chord
 import Gardener
 import Net
-import Puppy
 import Spacetime
 import Transmission
 import Universe

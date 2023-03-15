@@ -12,8 +12,8 @@ let package = Package(
             targets: ["Antiphony"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/sushichop/Puppy.git", from: "0.6.0"),
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.0.0"),
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.5.2"),
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.4"),
         .package(url: "https://github.com/OperatorFoundation/Spacetime", branch: "main"),
@@ -27,13 +27,13 @@ let package = Package(
             dependencies: [
                 "KeychainCli",
                 "Net",
-                "Puppy",
                 "Transmission",
                 .product(name: "Lifecycle", package: "swift-service-lifecycle"),
                 .product(name: "NIO", package: "swift-nio"),
                 .product(name: "Simulation", package: "Spacetime"),
                 .product(name: "Spacetime", package: "Spacetime"),
                 .product(name: "Universe", package: "Spacetime"),
+                .product(name: "Logging", package: "swift-log")
             ]),
         .target(
             name: "AntiphonyDemo",

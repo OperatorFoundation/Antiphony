@@ -7,7 +7,7 @@
 
 import Foundation
 
-#if os(macOS) || os(iOS)
+#if os(macOS)
 import os.log
 #else
 import Logging

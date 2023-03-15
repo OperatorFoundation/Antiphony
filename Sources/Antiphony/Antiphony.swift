@@ -9,7 +9,7 @@ import Foundation
 import Lifecycle
 import NIO
 
-#if os(macOS) || os(iOS)
+#if os(macOS)
 import os.log
 #else
 import FoundationNetworking

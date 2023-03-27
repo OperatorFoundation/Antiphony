@@ -56,7 +56,7 @@ public struct ClientConfig: Codable
         }
         catch
         {
-            print("Error decoding client config file: \(error)")
+            print("Error decoding client config file \(url.lastPathComponent): \(error)")
             
             return nil
         }

@@ -51,7 +51,7 @@ public struct ServerConfig: Codable
         }
         catch
         {
-            print("Error decoding Shadow config file: \(error)")
+            print("Failed to find a valid server config file at \(url.path). Received an error: \(error)")
             
             return nil
         }

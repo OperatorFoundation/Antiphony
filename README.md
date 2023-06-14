@@ -1,7 +1,5 @@
 # Antiphony
 
-A description of this package.
-
 ### To generate new client / server configs ###
 
 Antiphony uses the 'ArgumentParser' library to parse and execute command line arguments.

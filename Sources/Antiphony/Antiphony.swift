@@ -24,6 +24,8 @@ import Transmission
 
 open class Antiphony
 {
+    let logger: Logger
+    
     static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String) throws
     {
         let ip: String
@@ -113,9 +115,9 @@ open class Antiphony
         lifecycle.registerShutdown(label: "eventLoopGroup", .sync(eventLoopGroup.syncShutdownGracefully))
         
         #if os(macOS) || os(iOS)
-        let logger = Logger(subsystem: loggerLabel, category: "RunServer")
+        self.logger = Logger(subsystem: loggerLabel, category: "RunServer")
         #else
-        let logger = Logger(label: loggerLabel)
+        self.logger = Logger(label: loggerLabel)
         #endif
         
         let simulation = Simulation(capabilities: capabilities)

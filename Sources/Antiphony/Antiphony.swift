@@ -24,7 +24,7 @@ import Transmission
 
 open class Antiphony
 {
-    let logger: Logger
+    public let logger: Logger
     
     static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String) throws
     {

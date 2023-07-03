@@ -146,7 +146,7 @@ open class Antiphony
         if let universeListener = universe.listener
         {
             self.listener = universeListener
-            print("Server listening 🪐")
+            print("Server listening on \(universe.listenAddr):\(universe.listenPort)🪐")
         }
         else
         {

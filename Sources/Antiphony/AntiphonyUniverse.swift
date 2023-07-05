@@ -38,7 +38,9 @@ class AntiphonyUniverse: Universe
     
     override func main() throws
     {
-        self.listener = try self.listen(listenAddr, listenPort)
+        // TODO: Debug use - replacing Spacetime listener with trad
+        // self.listener = try self.listen(listenAddr, listenPort)
+        self.listener = try TransmissionListener(port: listenPort, logger: self.logger)
         display("listening on \(listenAddr) \(listenPort)")
     }
     

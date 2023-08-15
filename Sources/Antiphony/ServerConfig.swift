@@ -60,6 +60,8 @@ public struct ServerConfig: Codable
     public func save(to fileURL: URL) throws
     {
         let encoder = JSONEncoder()
+        encoder.outputFormatting = .withoutEscapingSlashes
+        
         let serverConfigData = try encoder.encode(self)
         try serverConfigData.write(to: fileURL)
     }

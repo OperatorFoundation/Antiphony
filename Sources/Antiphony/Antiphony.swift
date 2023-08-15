@@ -26,7 +26,7 @@ open class Antiphony
 {
     public let logger: Logger
     
-    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String) throws
+    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String, overwriteKey: Bool = false) throws
     {
         let ip: String
 
@@ -41,7 +41,7 @@ open class Antiphony
             throw AntiphonyError.couldNotLoadKeychain
         }
 
-        guard let privateKeyKeyAgreement = keychain.generateAndSavePrivateKey(label: keychainLabel, type: KeyType.P256KeyAgreement) else
+        guard let privateKeyKeyAgreement = keychain.generateAndSavePrivateKey(label: keychainLabel, type: KeyType.P256KeyAgreement, overwrite: overwriteKey) else
         {
             throw AntiphonyError.couldNotGeneratePrivateKey
         }

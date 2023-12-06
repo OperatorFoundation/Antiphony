@@ -23,7 +23,7 @@ class AntiphonyUniverse: Universe
     
     public var listener: Transmission.Listener?
     
-    public init(listenAddr: String, listenPort: Int, effects: BlockingQueue<Effect>, events: BlockingQueue<Event>, logger: Logger)
+    public init(listenAddr: String, listenPort: Int, effects: BlockingQueue<Effect>, events: BlockingQueue<Event>, logger: Logger?)
     {
         self.listenAddr = listenAddr
         self.listenPort = listenPort

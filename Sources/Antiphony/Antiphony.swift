@@ -121,7 +121,7 @@ open class Antiphony
         #endif
         
         let simulation = Simulation(capabilities: capabilities)
-        let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: logger)
+        let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: nil)
 
         lifecycle.register(label: label, start: .sync(universe.run), shutdown: .sync(self.shutdown))
 

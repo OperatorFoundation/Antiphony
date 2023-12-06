@@ -27,15 +27,18 @@ class AntiphonyUniverse: Universe
     {
         self.listenAddr = listenAddr
         self.listenPort = listenPort
-    
-        super.init(effects: effects, events: events, logger: logger)
+        
+        // FIXME: Logger
+        super.init(effects: effects, events: events, logger: nil)
     }
     
     override func main() throws
     {
         // TODO: Debug use - replacing Spacetime listener with trad
         // self.listener = try self.listen(listenAddr, listenPort)
-        self.listener = try TransmissionListener(port: listenPort, logger: self.logger)
+        
+        // FIXME: Logger
+        self.listener = try TransmissionListener(port: listenPort, logger: nil)
         display("listening on \(listenAddr) \(listenPort)")
     }
     

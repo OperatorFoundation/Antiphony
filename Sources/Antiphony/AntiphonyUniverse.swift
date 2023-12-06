@@ -6,12 +6,7 @@
 //
 
 import Foundation
-
-#if os(macOS)
-import os.log
-#else
 import Logging
-#endif
 
 import Chord
 import Gardener

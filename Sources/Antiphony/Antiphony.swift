@@ -7,13 +7,13 @@
 
 import Foundation
 import Lifecycle
+import Logging
 import NIO
 
 #if os(macOS)
-import os.log
+//
 #else
 import FoundationNetworking
-import Logging
 #endif
 
 import KeychainCli
@@ -114,11 +114,7 @@ open class Antiphony
         let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         lifecycle.registerShutdown(label: "eventLoopGroup", .sync(eventLoopGroup.syncShutdownGracefully))
         
-        #if os(macOS) || os(iOS)
-        self.logger = Logger(subsystem: loggerLabel, category: "RunServer")
-        #else
         self.logger = Logger(label: loggerLabel)
-        #endif
         
         let simulation = Simulation(capabilities: capabilities)
         let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: nil)

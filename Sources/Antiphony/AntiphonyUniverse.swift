@@ -38,7 +38,7 @@ class AntiphonyUniverse: Universe
         // self.listener = try self.listen(listenAddr, listenPort)
         
         // FIXME: Logger
-        self.listener = try TransmissionListener(port: listenPort, logger: nil)
+        self.listener = TransmissionListener(port: listenPort, logger: nil)
         display("listening on \(listenAddr) \(listenPort)")
     }
     

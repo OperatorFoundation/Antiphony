@@ -6,12 +6,7 @@
 //
 
 import Foundation
-
-#if os(macOS)
-import os.log
-#else
 import Logging
-#endif
 
 import Chord
 import Gardener
@@ -28,19 +23,22 @@ class AntiphonyUniverse: Universe
     
     public var listener: Transmission.Listener?
     
-    public init(listenAddr: String, listenPort: Int, effects: BlockingQueue<Effect>, events: BlockingQueue<Event>, logger: Logger)
+    public init(listenAddr: String, listenPort: Int, effects: BlockingQueue<Effect>, events: BlockingQueue<Event>, logger: Logger?)
     {
         self.listenAddr = listenAddr
         self.listenPort = listenPort
-    
-        super.init(effects: effects, events: events, logger: logger)
+        
+        // FIXME: Logger
+        super.init(effects: effects, events: events, logger: nil)
     }
     
     override func main() throws
     {
         // TODO: Debug use - replacing Spacetime listener with trad
         // self.listener = try self.listen(listenAddr, listenPort)
-        self.listener = try TransmissionListener(port: listenPort, logger: self.logger)
+        
+        // FIXME: Logger
+        self.listener = TransmissionListener(port: listenPort, logger: nil)
         display("listening on \(listenAddr) \(listenPort)")
     }
     

@@ -12,10 +12,10 @@ let package = Package(
             targets: ["Antiphony"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.59.0"),
-        .package(url: "https://github.com/apple/swift-log.git", from: "1.5.3"),
+        .package(url: "https://github.com/apple/swift-nio", from: "2.59.0"),
+        .package(url: "https://github.com/apple/swift-log", from: "1.5.3"),
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
-        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.3"),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.3"),
         .package(url: "https://github.com/OperatorFoundation/Spacetime", branch: "release"),
         .package(url: "https://github.com/OperatorFoundation/KeychainCli", branch: "release"),
         .package(url: "https://github.com/OperatorFoundation/Net", branch: "release"),

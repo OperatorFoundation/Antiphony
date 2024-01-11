@@ -37,9 +37,7 @@ class AntiphonyUniverse: Universe
         // TODO: Debug use - replacing Spacetime listener with trad
         // self.listener = try self.listen(listenAddr, listenPort)
         
-        // FIXME: Logger
         self.listener = TransmissionListener(port: listenPort, logger: nil)
-        display("listening on \(listenAddr) \(listenPort)")
     }
     
     public func shutdown()

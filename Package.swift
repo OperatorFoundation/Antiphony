@@ -16,10 +16,12 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-log", from: "1.5.3"),
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.3"),
+        .package(url: "https://github.com/OperatorFoundation/Chord.git", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/Spacetime", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/KeychainCli", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/Net", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/Transmission", branch: "main"),
+        .package(url: "https://github.com/OperatorFoundation/TransmissionAsync", branch: "main"),
     ],
     targets: [
         .target(
@@ -28,6 +30,7 @@ let package = Package(
                 "KeychainCli",
                 "Net",
                 "Transmission",
+                "TransmissionAsync",
                 .product(name: "Lifecycle", package: "swift-service-lifecycle"),
                 .product(name: "NIO", package: "swift-nio"),
                 .product(name: "Simulation", package: "Spacetime"),
@@ -43,6 +46,7 @@ let package = Package(
             dependencies: [
                 "Antiphony",
                 "AntiphonyDemo",
+                "TransmissionAsync",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]),
         .executableTarget(
@@ -50,6 +54,8 @@ let package = Package(
             dependencies: [
                 "Antiphony",
                 "AntiphonyDemo",
+                "Chord",
+                "TransmissionAsync",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]),
         .testTarget(

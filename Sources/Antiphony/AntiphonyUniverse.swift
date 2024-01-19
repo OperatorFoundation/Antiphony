@@ -12,16 +12,17 @@ import Chord
 import Gardener
 import Net
 import Spacetime
-import Transmission
+import TransmissionAsync
 import Universe
 
 class AntiphonyUniverse: Universe
 {
+    let connectionsQueue = DispatchQueue(label: "ConnectionsQueue")
     let listenAddr: String
     let listenPort: Int
-    let connectionsQueue = DispatchQueue(label: "ConnectionsQueue")
+    let antiphonyLogger = Logger(label: "AntiphonyLogger")
     
-    public var listener: Transmission.Listener?
+    public var listener: AsyncListener?
     
     public init(listenAddr: String, listenPort: Int, effects: BlockingQueue<Effect>, events: BlockingQueue<Event>, logger: Logger?)
     {
@@ -37,7 +38,7 @@ class AntiphonyUniverse: Universe
         // TODO: Debug use - replacing Spacetime listener with trad
         // self.listener = try self.listen(listenAddr, listenPort)
         
-        self.listener = TransmissionListener(port: listenPort, logger: nil)
+        try self.listener = AsyncTcpSocketListener(port: listenPort, antiphonyLogger)
     }
     
     public func shutdown()

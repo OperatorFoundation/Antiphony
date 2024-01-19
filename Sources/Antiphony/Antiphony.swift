@@ -21,6 +21,7 @@ import Net
 import Simulation
 import Spacetime
 import Transmission
+import TransmissionAsync
 
 open class Antiphony
 {
@@ -100,7 +101,7 @@ open class Antiphony
     
     private let lock = DispatchSemaphore(value: 0)
     var lifecycle: ServiceLifecycle
-    public var listener: Transmission.Listener? = nil
+    public var listener: AsyncListener? = nil
     
     public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities, label: String = "antiphony") throws
     {

@@ -8,13 +8,15 @@
 import Foundation
 
 import AntiphonyDemo
-import TransmissionTypes
+import Chord
+import TransmissionAsync
 
 public class AntiphonyDemoClient
 {
-    let connection: TransmissionTypes.Connection
+    let connection: AsyncConnection
+    
 
-    public init(connection: TransmissionTypes.Connection)
+    public init(connection: AsyncConnection)
     {
         self.connection = connection
     }
@@ -24,23 +26,21 @@ public class AntiphonyDemoClient
         let message = AntiphonyDemoRequest.echo(Echo(message: message))
         let encoder = JSONEncoder()
         let data = try encoder.encode(message)
-        guard self.connection.writeWithLengthPrefix(data: data, prefixSizeInBits: 64) else
+        
+        let responseData = try AsyncAwaitThrowingSynchronizer<String>.sync
         {
-            throw AntiphonyDemoClientError.writeFailed
+            let prefixSizeInBits = 64
+            try await self.connection.writeWithLengthPrefix(data, prefixSizeInBits)
+            return try await self.connection.readWithLengthPrefix(prefixSizeInBits: prefixSizeInBits)
         }
-
-        guard let responseData = self.connection.readWithLengthPrefix(prefixSizeInBits: 64) else
-        {
-            throw AntiphonyDemoClientError.readFailed
-        }
-
+        
         let decoder = JSONDecoder()
         let response = try decoder.decode(AntiphonyDemoResponse.self, from: responseData)
+        
         switch response
         {
             case .echo(let value):
                 return value
-
         }
     }
 }

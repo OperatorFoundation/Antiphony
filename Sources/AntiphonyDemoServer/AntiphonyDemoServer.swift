@@ -8,23 +8,23 @@
 import Foundation
 
 import AntiphonyDemo
-import TransmissionTypes
+import TransmissionAsync
 
 public class AntiphonyDemoServer
 {
-    let listener: TransmissionTypes.Listener
+    let listener: AsyncListener
     let handler: AntiphonyDemo
 
     var running: Bool = true
 
-    public init(listener: TransmissionTypes.Listener, handler: AntiphonyDemo)
+    public init(listener: AsyncListener, handler: AntiphonyDemo)
     {
         self.listener = listener
         self.handler = handler
 
         Task
         {
-            self.acceptLoop()
+            self.accept()
         }
     }
 
@@ -33,38 +33,34 @@ public class AntiphonyDemoServer
         self.running = false
     }
 
-    func acceptLoop()
+    func accept()
     {
         while self.running
         {
-            do
+            Task
             {
-                let connection = try self.listener.accept()
-
-                Task
+                do
                 {
-                    self.handleConnection(connection)
+                    let connection = try await self.listener.accept()
+                    try await self.handleConnection(connection)
                 }
-            }
-            catch
-            {
-                print(error)
-                self.running = false
-                return
+                catch
+                {
+                    print(error)
+                    self.running = false
+                    return
+                }
             }
         }
     }
 
-    func handleConnection(_ connection: TransmissionTypes.Connection)
+    func handleConnection(_ connection: AsyncConnection) async throws
     {
         while self.running
         {
             do
             {
-                guard let requestData = connection.readWithLengthPrefix(prefixSizeInBits: 64) else
-                {
-                    throw AntiphonyDemoServerError.readFailed
-                }
+                let requestData = try await connection.readWithLengthPrefix(prefixSizeInBits: 64)
 
                 let decoder = JSONDecoder()
                 let request = try decoder.decode(AntiphonyDemoRequest.self, from: requestData)
@@ -75,10 +71,7 @@ public class AntiphonyDemoServer
                         let response = AntiphonyDemoResponse.echo(result)
                         let encoder = JSONEncoder()
                         let responseData = try encoder.encode(response)
-                        guard connection.writeWithLengthPrefix(data: responseData, prefixSizeInBits: 64) else
-                        {
-                            throw AntiphonyDemoServerError.writeFailed
-                        }
+                        try await connection.writeWithLengthPrefix(responseData, 64)
                 }
             }
             catch

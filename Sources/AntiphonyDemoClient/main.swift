@@ -7,10 +7,12 @@
 
 import ArgumentParser
 import Foundation
+import Logging
 
 import Antiphony
+import Chord
 import Gardener
-import Transmission
+import TransmissionAsync
 
 
 struct AntiphonyDemoClientCommandLine: ParsableCommand
@@ -38,12 +40,14 @@ extension AntiphonyDemoClientCommandLine
                 throw AntiphonyError.invalidConfigFile
             }
             
-            guard let connection = TransmissionConnection(host: config.host, port: config.port) else
+            let connection = try AsyncAwaitThrowingSynchronizer<AsyncConnection>.sync
             {
-                throw AntiphonyError.failedToCreateConnection
+                let newConnection = try await AsyncTcpSocketConnection(config.host, config.port, Logger(label: loggerLabel))
+                return newConnection
             }
             
             let antiphonyClient = AntiphonyDemoClient(connection: connection)
+
             
             let echoResponse = try antiphonyClient.echo(message: message)
             print("Server responded with: \(echoResponse)")

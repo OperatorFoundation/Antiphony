@@ -129,7 +129,11 @@ open class Antiphony
             {
                 print("Server started 🚀")
             }
+            
+            self.lock.signal()
         }
+        
+        lock.wait()
     }
     
     func start(config: ServerConfig) throws

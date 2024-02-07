@@ -100,7 +100,7 @@ open class Antiphony
     #endif
     
     private let lock = DispatchSemaphore(value: 0)
-    var lifecycle: ServiceLifecycle
+    public var lifecycle: ServiceLifecycle
     public var listener: AsyncListener? = nil
     
     public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities, label: String = "antiphony") throws

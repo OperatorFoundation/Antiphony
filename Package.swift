@@ -17,7 +17,6 @@ let package = Package(
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.3"),
         .package(url: "https://github.com/OperatorFoundation/Chord.git", branch: "main"),
-        .package(url: "https://github.com/OperatorFoundation/Spacetime", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/KeychainCli", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/Net", branch: "main"),
         .package(url: "https://github.com/OperatorFoundation/Transmission", branch: "main"),
@@ -33,9 +32,6 @@ let package = Package(
                 "TransmissionAsync",
                 .product(name: "Lifecycle", package: "swift-service-lifecycle"),
                 .product(name: "NIO", package: "swift-nio"),
-                .product(name: "Simulation", package: "Spacetime"),
-                .product(name: "Spacetime", package: "Spacetime"),
-                .product(name: "Universe", package: "Spacetime"),
                 .product(name: "Logging", package: "swift-log")
             ]),
         .target(

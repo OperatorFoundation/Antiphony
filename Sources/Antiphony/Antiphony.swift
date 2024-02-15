@@ -25,7 +25,7 @@ open class Antiphony
 {
     public let logger: Logger
     
-    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String, overwriteKey: Bool = false) throws
+    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String, stateDirectory: URL? = nil, overwriteKey: Bool = false) throws
     {
         let ip: String
 
@@ -52,7 +52,7 @@ open class Antiphony
             throw AntiphonyError.portInUse(port)
         }
         
-        let serverConfig = ServerConfig(name: name, host: ip, port: port)
+        let serverConfig = ServerConfig(name: name, host: ip, port: port, stateDirectory: stateDirectory)
         try serverConfig.save(to: serverConfigURL)
         print("Wrote config to \(serverConfigURL.path)")
 

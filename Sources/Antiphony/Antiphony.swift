@@ -49,7 +49,7 @@ open class Antiphony
         {
             test.close()
 
-            throw AntiphonyError.portInUse(port)
+            print("⚠️ Failed to create a test connection with the intended ip: \(ip) and port: \(port). The resulting config files may not work correctly. Please check the server address and make sure that it is accessible and that the indicated port is not already in use.")
         }
         
         let serverConfig = ServerConfig(name: name, host: ip, port: port, stateDirectory: stateDirectory)

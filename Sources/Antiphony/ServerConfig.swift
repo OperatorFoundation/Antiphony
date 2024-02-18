@@ -7,17 +7,29 @@
 
 import Foundation
 
+import Gardener
+
 public struct ServerConfig: Codable
 {
     public let name: String
     public let host: String
     public let port: Int
+    public var stateDirectory: URL
 
-    public init(name: String, host: String, port: Int)
+    public init(name: String, host: String, port: Int, stateDirectory: URL? = nil)
     {
         self.name = name
         self.host = host
         self.port = port
+        
+        if let userStateDir = stateDirectory
+        {
+            self.stateDirectory = userStateDir
+        }
+        else
+        {
+            self.stateDirectory = File.homeDirectory().appendingPathComponent("AntiphonyState", isDirectory: true)
+        }
     }
     
     public init?(from data: Data)

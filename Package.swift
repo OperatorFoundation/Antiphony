@@ -12,16 +12,16 @@ let package = Package(
             targets: ["Antiphony"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-nio", from: "2.59.0"),
+        .package(url: "https://github.com/apple/swift-nio", from: "2.63.0"),
         .package(url: "https://github.com/apple/swift-log", from: "1.5.3"),
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.3"),
-        .package(url: "https://github.com/OperatorFoundation/Chord.git", branch: "0.1.1"),
-        .package(url: "https://github.com/OperatorFoundation/KeychainCli", branch: "1.0.0"),
-        .package(url: "https://github.com/OperatorFoundation/Net", branch: "release"),
-        .package(url: "https://github.com/OperatorFoundation/Spacetime", branch: "release"),
-        .package(url: "https://github.com/OperatorFoundation/Transmission", branch: "release"),
-        .package(url: "https://github.com/OperatorFoundation/TransmissionAsync", branch: "release"),
+
+        .package(url: "https://github.com/OperatorFoundation/Chord.git", from: "0.1.4"),
+        .package(url: "https://github.com/OperatorFoundation/KeychainCli", from: "1.0.1"),
+        .package(url: "https://github.com/OperatorFoundation/Net", from: "0.0.10"),
+        .package(url: "https://github.com/OperatorFoundation/Transmission", from: "1.2.11"),
+        .package(url: "https://github.com/OperatorFoundation/TransmissionAsync", from: "0.1.4"),
     ],
     targets: [
         .target(
@@ -33,9 +33,6 @@ let package = Package(
                 "TransmissionAsync",
                 .product(name: "Lifecycle", package: "swift-service-lifecycle"),
                 .product(name: "NIO", package: "swift-nio"),
-                .product(name: "Simulation", package: "Spacetime"),
-                .product(name: "Spacetime", package: "Spacetime"),
-                .product(name: "Universe", package: "Spacetime"),
                 .product(name: "Logging", package: "swift-log")
             ]),
         .target(

@@ -18,7 +18,6 @@ import Logging
 import Antiphony
 import Gardener
 import Net
-import Spacetime
 
 
 struct AntiphonyCommandLine: ParsableCommand
@@ -59,7 +58,7 @@ extension AntiphonyCommandLine
     {        
         mutating func run() throws
         {
-            let customAntiphony = try CustomAntiphony(serverConfigURL: serverConfigURL, loggerLabel: loggerLabel, capabilities: Capabilities(.display, .networkListen))
+            let customAntiphony = try CustomAntiphony(serverConfigURL: serverConfigURL, loggerLabel: loggerLabel)
             
             guard let newListener = customAntiphony.listener else
             {

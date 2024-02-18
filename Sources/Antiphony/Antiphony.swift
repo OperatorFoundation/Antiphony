@@ -18,8 +18,6 @@ import FoundationNetworking
 
 import KeychainCli
 import Net
-import Simulation
-import Spacetime
 import Transmission
 import TransmissionAsync
 
@@ -27,7 +25,7 @@ open class Antiphony
 {
     public let logger: Logger
     
-    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String, overwriteKey: Bool = false) throws
+    static public func generateNew(name: String, port: Int, serverConfigURL: URL, clientConfigURL: URL, keychainURL: URL, keychainLabel: String, stateDirectory: URL? = nil, overwriteKey: Bool = false) throws
     {
         let ip: String
 
@@ -51,10 +49,10 @@ open class Antiphony
         {
             test.close()
 
-            throw AntiphonyError.portInUse(port)
+            print("⚠️ Failed to create a test connection with the intended ip: \(ip) and port: \(port). The resulting config files may not work correctly. Please check the server address and make sure that it is accessible and that the indicated port is not already in use.")
         }
         
-        let serverConfig = ServerConfig(name: name, host: ip, port: port)
+        let serverConfig = ServerConfig(name: name, host: ip, port: port, stateDirectory: stateDirectory)
         try serverConfig.save(to: serverConfigURL)
         print("Wrote config to \(serverConfigURL.path)")
 
@@ -103,7 +101,7 @@ open class Antiphony
     public var lifecycle: ServiceLifecycle
     public var listener: AsyncListener? = nil
     
-    public init(serverConfigURL: URL, loggerLabel: String, capabilities: Capabilities, label: String = "antiphony") throws
+    public init(serverConfigURL: URL, loggerLabel: String, label: String = "antiphony") throws
     {
         guard let config = ServerConfig(url: serverConfigURL) else
         {
@@ -116,11 +114,8 @@ open class Antiphony
         lifecycle.registerShutdown(label: "eventLoopGroup", .sync(eventLoopGroup.syncShutdownGracefully))
         
         self.logger = Logger(label: loggerLabel)
-        
-        let simulation = Simulation(capabilities: capabilities)
-        let universe = AntiphonyUniverse(listenAddr: config.host, listenPort: config.port, effects: simulation.effects, events: simulation.events, logger: nil)
 
-        lifecycle.register(label: label, start: .sync(universe.run), shutdown: .sync(self.shutdown))
+        lifecycle.register(label: label, start: .sync({try self.start(config: config)}), shutdown: .sync(self.shutdown))
 
         lifecycle.start
         {
@@ -139,16 +134,12 @@ open class Antiphony
         }
         
         lock.wait()
-        
-        if let universeListener = universe.listener
-        {
-            self.listener = universeListener
-            print("Server listening on \(universe.listenAddr):\(universe.listenPort)🪐")
-        }
-        else
-        {
-            throw AntiphonyError.failedToCreateListener
-        }
+    }
+    
+    func start(config: ServerConfig) throws
+    {
+        try self.listener = AsyncTcpSocketListener(port: config.port, self.logger)
+        print("Server listening on \(config.host):\(config.port)🪐")
     }
     
     open func shutdown()

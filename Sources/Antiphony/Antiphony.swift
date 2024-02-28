@@ -138,7 +138,7 @@ open class Antiphony
     
     func start(config: ServerConfig) throws
     {
-        try self.listener = AsyncTcpSocketListener(port: config.port, self.logger)
+        try self.listener = AsyncTcpSocketListener(port: config.port, self.logger, verbose: self.logger.logLevel == .debug)
         print("Server listening on \(config.host):\(config.port)🪐")
     }
     

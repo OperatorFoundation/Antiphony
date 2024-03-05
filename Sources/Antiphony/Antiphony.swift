@@ -101,7 +101,12 @@ open class Antiphony
     public var lifecycle: ServiceLifecycle
     public var listener: AsyncListener? = nil
     
-    public init(serverConfigURL: URL, loggerLabel: String, label: String = "antiphony") throws
+    public convenience init(serverConfigURL: URL, loggerLabel: String, label: String = "antiphony") throws
+    {
+        try self.init(serverConfigURL: serverConfigURL, logger: Logger(label: loggerLabel), label: label)
+    }
+    
+    public init(serverConfigURL: URL, logger: Logger, label: String = "antiphony") throws
     {
         guard let config = ServerConfig(url: serverConfigURL) else
         {
@@ -113,7 +118,7 @@ open class Antiphony
         let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         lifecycle.registerShutdown(label: "eventLoopGroup", .sync(eventLoopGroup.syncShutdownGracefully))
         
-        self.logger = Logger(label: loggerLabel)
+        self.logger = logger
 
         lifecycle.register(label: label, start: .sync({try self.start(config: config)}), shutdown: .sync(self.shutdown))
 

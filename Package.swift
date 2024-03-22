@@ -17,11 +17,11 @@ let package = Package(
         .package(url: "https://github.com/swift-server/swift-service-lifecycle", from: "1.0.0-alpha.11"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.3"),
 
-        .package(url: "https://github.com/OperatorFoundation/Chord.git", from: "0.1.4"),
-        .package(url: "https://github.com/OperatorFoundation/KeychainCli", from: "1.0.1"),
+        .package(url: "https://github.com/OperatorFoundation/Chord.git", from: "0.1.5"),
+        .package(url: "https://github.com/OperatorFoundation/KeychainCli", from: "1.0.2"),
         .package(url: "https://github.com/OperatorFoundation/Net", from: "0.0.10"),
-        .package(url: "https://github.com/OperatorFoundation/Transmission", from: "1.2.11"),
-        .package(url: "https://github.com/OperatorFoundation/TransmissionAsync", from: "0.1.4"),
+        .package(url: "https://github.com/OperatorFoundation/Transmission", from: "1.2.12"),
+        .package(url: "https://github.com/OperatorFoundation/TransmissionAsync", from: "0.1.5"),
     ],
     targets: [
         .target(

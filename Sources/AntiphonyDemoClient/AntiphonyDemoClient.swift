@@ -27,7 +27,7 @@ public class AntiphonyDemoClient
         let encoder = JSONEncoder()
         let data = try encoder.encode(message)
         
-        let responseData = try AsyncAwaitThrowingSynchronizer<String>.sync
+        let responseData = try AsyncAwaitThrowingSynchronizer<Data>.sync
         {
             let prefixSizeInBits = 64
             try await self.connection.writeWithLengthPrefix(data, prefixSizeInBits)
